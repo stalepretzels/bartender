@@ -1,0 +1,11 @@
+/home/damner/code/target/x86_64-unknown-freebsd/release/deps/libfutures_lite-ca7507df36b17b48.rmeta: /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/lib.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/future.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/prelude.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/stream.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/io.rs
+
+/home/damner/code/target/x86_64-unknown-freebsd/release/deps/libfutures_lite-ca7507df36b17b48.rlib: /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/lib.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/future.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/prelude.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/stream.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/io.rs
+
+/home/damner/code/target/x86_64-unknown-freebsd/release/deps/futures_lite-ca7507df36b17b48.d: /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/lib.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/future.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/prelude.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/stream.rs /home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/io.rs
+
+/home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/lib.rs:
+/home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/future.rs:
+/home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/prelude.rs:
+/home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/stream.rs:
+/home/damner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-lite-2.2.0/src/io.rs:

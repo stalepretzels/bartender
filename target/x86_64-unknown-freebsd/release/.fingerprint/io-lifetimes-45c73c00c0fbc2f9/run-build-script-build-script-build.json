@@ -1,0 +1,1 @@
+{"rustc":18004373081649162931,"features":"","declared_features":"","target":0,"profile":0,"path":0,"deps":[[7005125447819668935,"build_script_build",false,2494950897654208421]],"local":[{"RerunIfChanged":{"output":"x86_64-unknown-freebsd/release/build/io-lifetimes-45c73c00c0fbc2f9/output","paths":["build.rs"]}}],"rustflags":[],"metadata":0,"config":0,"compile_kind":0}
