@@ -1,6 +1,6 @@
 {
   "name": "@callmeclover_/censor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Bindings for the 'rustrict' Rust crate.",
   "main": "index.node",
   "private": false,
