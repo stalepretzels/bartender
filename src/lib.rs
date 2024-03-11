@@ -1,21 +1,18 @@
 use neon::prelude::*;
-use censor::Censor;
+use rustrict::CensorStr;
 
 fn censor(mut cx: FunctionContext) -> JsResult<JsString> {
     let input = cx.argument::<JsString>(0)?.value(&mut cx);
-    let censor = Censor::Standard.censor(&input);
-    Ok(cx.string(&censor))
+    Ok(cx.string(&input.censor()))
 }
 
 fn censor_sx(mut cx: FunctionContext) -> JsResult<JsString> {
     let input = cx.argument::<JsString>(0)?.value(&mut cx);
-    let censor = Censor::Sex.censor(&input);
     Ok(cx.string(&censor))
 }
 
 fn censor_zea(mut cx: FunctionContext) -> JsResult<JsString> {
     let input = cx.argument::<JsString>(0)?.value(&mut cx);
-    let censor = Censor::Zealous.censor(&input);
     Ok(cx.string(&censor))
 }
 

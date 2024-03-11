@@ -1,8 +1,8 @@
 # censor
 
-**censor:** Bindings for the 'censor' Rust crate.
+**censor:** Bindings for the 'rustrict' Rust crate.
 
-Almost none of this was made by me, Clover Johnson! Please go check out the original authors work [here](https://github.com/kaikalii/censor)!
+Almost none of this was made by me, Clover Johnson! Please go check out the original authors work [here](https://github.com/finnbear/rustrict/)!
 
 ## Installing censor
 

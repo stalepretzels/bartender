@@ -1,7 +1,7 @@
 {
   "name": "@callmeclover_/censor",
   "version": "0.1.0",
-  "description": "Bindings for the 'censor' Rust crate.",
+  "description": "Bindings for the 'rustrict' Rust crate.",
   "main": "index.node",
   "private": false,
   "scripts": {
@@ -11,7 +11,7 @@
     "install": "npm run build-release",
     "test": "cargo test"
   },
-  "author": "Bindings by Clover Johnson and Original by Kai Schmidt",
+  "author": "Bindings by Clover Johnson and Original by Finn Bear",
   "license": "ISC",
   "devDependencies": {
     "cargo-cp-artifact": "^0.1"
