@@ -1,14 +1,19 @@
+use rustler::{NifEnv, NifTerm, NifResult, NifEncoder};
 use rustrict::CensorStr;
-use neon::prelude::*;
 
-fn censor(mut cx: FunctionContext) -> JsResult<JsString> {
-    let arg0 = cx.argument::<JsString>(0)?; // Get the first argument as a JsString
-    let rust_string: String = arg0.value(&mut cx); // Convert JsString to Rust string
-
-    Ok(cx.string(rust_string.censor()))
+mod atoms {
+    rustler::atoms! {
+        ok,
+        error,
+    }
 }
-#[neon::main]
-fn main(mut cx: ModuleContext) -> NeonResult<()> {
-    cx.export_function("censor", censor)?;
+
+#[rustler::nif]
+fn filter_profanity(input: String) -> NifResult<String> {
+    let filtered_text = input.censor(input);
+    Ok(filtered_text)
+}
+
+rustler::init!("Elixir.Bartender.Filterer", [filter_profanity], load = |env, _| {
     Ok(())
-}
+});
