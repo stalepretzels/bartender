@@ -5,4 +5,4 @@ fn filter_profanity(input: String) -> String {
     input.censor()
 }
 
-rustler::init!("Elixir.Bartender.Filterer", [filter_profanity]);
+rustler::init!("Elixir.Bartender", [filter_profanity]);
