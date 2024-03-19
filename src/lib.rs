@@ -1,70 +1,27 @@
 use rustrict::{CensorStr, Type};
 use std::collections::HashMap;
+use once_cell::sync::Lazy;
 
-let mut type_map = HashMap::new();
+static TYPE_MAP: Lazy<HashMap<String, Type>> = Lazy::new(|| HashMap::from(
+[
+    ("profane".to_string(), Type::PROFANE),
+    ("offensive".to_string(), Type::OFFENSIVE),
+    ("sexual".to_string(), Type::SEXUAL),
+    ("mean".to_string(), Type::MEAN),
+    ("evasive".to_string(), Type::EVASIVE),
+    ("spam".to_string(), Type::SPAM),
+    ("safe".to_string(), Type::SAFE),
+    ("mild".to_string(), Type::MILD),
+    ("moderate".to_string(), Type::MODERATE),
+    ("severe".to_string(), Type::SEVERE),
+    ("mild_or_higher".to_string(), Type::MILD_OR_HIGHER),
+    ("moderate_or_higher".to_string(), Type::MODERATE_OR_HIGHER),
+    ("inappropriate".to_string(), Type::INAPPROPRIATE),
+    ("any".to_string(), Type::ANY),
+    ("none".to_string(), Type::NONE),
+]));
 
-    type_map.insert(
-        "profane".to_string(),
-        Type::PROFANE,
-    );
-    type_map.insert(
-        "offensive".to_string(),
-        Type::OFFENSIVE,
-    );
-    type_map.insert(
-        "sexual".to_string(),
-        Type::SEXUAL,
-    );
-    type_map.insert(
-        "mean".to_string(),
-        Type::MEAN,
-    );
-    type_map.insert(
-        "evasive".to_string(),
-        Type::EVASIVE,
-    );
-    type_map.insert(
-        "spam".to_string(),
-        Type::SPAM,
-    );
-    type_map.insert(
-        "safe".to_string(),
-        Type::SAFE,
-    );
-    type_map.insert(
-        "mild".to_string(),
-        Type::MILD,
-    );
-    type_map.insert(
-        "moderate".to_string(),
-        Type::MODERATE,
-    );
-    type_map.insert(
-        "severe".to_string(),
-        Type::SEVERE,
-    );
-    type_map.insert(
-        "mild_or_higher".to_string(),
-        Type::MILD_OR_HIGHER,
-    );
-    type_map.insert(
-        "moderate_or_higher".to_string(),
-        Type::MODERATE_OR_HIGHER,
-    );
-    type_map.insert(
-        "inappropriate".to_string(),
-        Type::INAPPROPRIATE,
-    );
-    type_map.insert(
-        "any".to_string(),
-        Type::ANY,
-    );
-    type_map.insert(
-        "none".to_string(),
-        Type::NONE,
-    );
-
-fn bitwise_equation(input: &str, map: &HashMap<String, Type>) -> Option<Type> {
+fn bitwise_equation(input: &str) -> Option<Type> {
     let keys: Vec<&str> = input.split(" | ").collect();
 
     if keys.is_empty() {
@@ -74,7 +31,7 @@ fn bitwise_equation(input: &str, map: &HashMap<String, Type>) -> Option<Type> {
     let mut result = Type::NONE;
 
     for key in keys {
-        if let Some(&value) = map.get(key) {
+        if let Some(&value) = TYPE_MAP.get(key) {
             result |= value;
         } else {
             return None; // Key not found in the map
@@ -96,8 +53,8 @@ fn is_inappropriate(input: String) -> bool {
 
 #[rustler::nif]
 fn is(input: String, filter_input: String) -> bool {
-    let mut filter;
-    if let Some(result) = bitwise_equation(filter_input) {
+    let filter;
+    if let Some(result) = bitwise_equation(&filter_input) {
         filter = result;
     } else {
         panic!("Invalid input or keys not found in the map");
@@ -107,8 +64,8 @@ fn is(input: String, filter_input: String) -> bool {
 
 #[rustler::nif]
 fn isnt(input: String, filter_input: String) -> bool {
-    let mut filter;
-    if let Some(result) = bitwise_equation(filter_input) {
+    let filter;
+    if let Some(result) = bitwise_equation(&filter_input) {
         filter = result;
     } else {
         panic!("Invalid input or keys not found in the map");
