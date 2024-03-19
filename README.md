@@ -91,3 +91,4 @@ Bartender.isnt("not a common phrase", "safe") # -> true
 ## Roadmap
 1. Add custom words and censors
 2. Implement `context` feature
+3. Array iterators
