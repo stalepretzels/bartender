@@ -5,7 +5,7 @@ edition = "2018"
 
 [dependencies]
 rustler = "0.24.0"
-rustrict = "0.6.0"
+rustrict = "0.7.24"
 
 [lib]
 crate-type = ["cdylib"]
