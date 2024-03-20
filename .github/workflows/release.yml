@@ -12,6 +12,9 @@ jobs:
             - name: Install Rust toolchain
               uses: dtolnay/rust-toolchain@stable
             - uses: erlef/setup-beam@v1
+              with:
+                otp-version: '22.2'
+                elixir-version: '1.11'
             - run: mix deps.get
             - run: mix test
             - name: Publish to Hex.pm
