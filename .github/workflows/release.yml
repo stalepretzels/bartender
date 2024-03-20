@@ -18,6 +18,6 @@ jobs:
             - run: mix deps.get
             - run: mix test
             - name: Publish to Hex.pm
-              uses: erlangpack/github-action@v3
+              run: mix hex.publish --yes
               env:
                 HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
