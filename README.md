@@ -1,5 +1,5 @@
 # Bartender
-[![CI](https://github.com/stalepretzels/bartender/actions/workflows/ci.yml/badge.svg)](https://github.com/stalepretzels/bartender/actions/workflows/ci.yml)
+[![.github/workflows/release.yml](https://github.com/stalepretzels/bartender/actions/workflows/release.yml/badge.svg)](https://github.com/stalepretzels/bartender/actions/workflows/release.yml)
 
 Elixir bindings for the `rustrict` crate.
 
