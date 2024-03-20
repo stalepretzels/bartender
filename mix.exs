@@ -34,7 +34,7 @@ defmodule Bartender.Mixfile do
 
   defp package() do
     [
-      name: "bartender",
+      name: "filter_bartender",
       licenses: ["MIT"],
       files: [
       "lib",
