@@ -4,7 +4,7 @@ defmodule Bartender.Mixfile do
     def project do
       [
         app: :nif_bartender,
-        version: "0.1.0",
+        version: "0.1.1",
         elixir: "~> 1.11",
         start_permanent: Mix.env() == :prod,
         deps: deps(),
@@ -22,8 +22,9 @@ defmodule Bartender.Mixfile do
   
     defp deps do
       [
-        {:rustler, "~> 0.31.0"},
-        {:rustler_precompiled, "~> 0.7"}
+        {:rustler, "~> 0.23.0"},
+        {:rustler_precompiled, "~> 0.7"},
+        {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
       ]
     end
 
@@ -40,7 +41,6 @@ defmodule Bartender.Mixfile do
       "native/bartender/.cargo",
       "native/bartender/src",
       "native/bartender/Cargo*",
-      "checksum-*.exs",
       "mix.exs"
     ],
       links: %{"GitHub" => "https://github.com/stalepretzels/bartender"}
