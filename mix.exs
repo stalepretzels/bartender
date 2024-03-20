@@ -1,10 +1,10 @@
 defmodule Bartender.Mixfile do
     use Mix.Project
-  
+
     def project do
       [
         app: :nif_bartender,
-        version: "0.1.1",
+        version: "0.1.2",
         elixir: "~> 1.11",
         start_permanent: Mix.env() == :prod,
         deps: deps(),
@@ -13,13 +13,13 @@ defmodule Bartender.Mixfile do
         aliases: aliases()
       ]
     end
-  
+
     def application do
       [
         extra_applications: [:logger]
       ]
     end
-  
+
     defp deps do
       [
         {:rustler, "~> 0.23.0"},
@@ -46,7 +46,7 @@ defmodule Bartender.Mixfile do
       links: %{"GitHub" => "https://github.com/stalepretzels/bartender"}
     ]
   end
-  
+
     defp aliases do
       [
         fmt: [
