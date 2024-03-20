@@ -22,7 +22,8 @@ defmodule Bartender.Mixfile do
   
     defp deps do
       [
-        {:rustler, "~> 0.31.0"}
+        {:rustler, "~> 0.31.0"},
+        {:rustler_precompiled, "~> 0.7"}
       ]
     end
 
