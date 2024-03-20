@@ -20,3 +20,5 @@ erl_crash.dump
 /target
 
 /priv/native/*.so
+
+.elixir_ls
