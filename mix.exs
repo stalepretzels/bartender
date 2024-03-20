@@ -23,6 +23,7 @@ defmodule Bartender.Mixfile do
     defp deps do
       [
         {:rustler, "~> 0.23.0"},
+        {:rustler_precompiled, "~> 0.7"},
         {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
       ]
     end
