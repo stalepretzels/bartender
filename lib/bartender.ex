@@ -1,5 +1,5 @@
   defmodule Bartender do
-    use Rustler, otp_app: :nif_bartender, crate: :bartender
+    use Rustler, otp_app: :bartender
   
     def censor(_input), do: error()
     def is_inappropriate(_input), do: error()

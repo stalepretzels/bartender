@@ -1,10 +1,10 @@
-defmodule Bartender.Mixfile do
+defmodule Bartender.MixProject do
     use Mix.Project
 
     def project do
       [
-        app: :nif_bartender,
-        version: "0.1.2",
+        app: :bartender,
+        version: "0.1.3",
         elixir: "~> 1.11",
         start_permanent: Mix.env() == :prod,
         deps: deps(),
