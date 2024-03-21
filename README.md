@@ -1,5 +1,7 @@
 # Bartender
 [![.github/workflows/release.yml](https://github.com/stalepretzels/bartender/actions/workflows/release.yml/badge.svg)](https://github.com/stalepretzels/bartender/actions/workflows/release.yml)
+[![Hex.pm Version](https://img.shields.io/hexpm/v/bartender_filter?label=hex.pm)](https://hex.pm/packages/bartender_filter)
+
 
 Elixir bindings for the `rustrict` crate.
 
