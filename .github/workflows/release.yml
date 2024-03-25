@@ -12,7 +12,7 @@ jobs:
             - name: Install Rust toolchain
               uses: dtolnay/rust-toolchain@stable
             - name: Install Node.js toolchain
-              uses: actions/setup-node@stable
+              uses: actions/setup-node@4
               with:
                 node-version: 20
             - name: Publish to NPM
