@@ -54,7 +54,7 @@ fn is_inappropriate(mut cx: FunctionContext) -> JsResult<JsBoolean> {
 
 fn is(mut cx: FunctionContext) -> JsResult<JsBoolean> {
     let input = cx.argument::<JsString>(0)?.value(&mut cx);
-    let filter_input = cx.argument::<JsBoolean>(1)?.value(&mut cx);
+    let filter_input = cx.argument::<JsString>(1)?.value(&mut cx);
     let filter;
     if let Some(result) = bitwise_equation(&filter_input) {
         filter = result;
@@ -66,7 +66,7 @@ fn is(mut cx: FunctionContext) -> JsResult<JsBoolean> {
 
 fn isnt(mut cx: FunctionContext) -> JsResult<JsBoolean> {
     let input = cx.argument::<JsString>(0)?.value(&mut cx);
-    let filter_input = cx.argument::<JsBoolean>(1)?.value(&mut cx);
+    let filter_input = cx.argument::<JsString>(1)?.value(&mut cx);
     let filter;
     if let Some(result) = bitwise_equation(&filter_input) {
         filter = result;
