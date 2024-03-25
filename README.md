@@ -1,9 +1,8 @@
 # Bartender
 [![.github/workflows/release.yml](https://github.com/stalepretzels/bartender/actions/workflows/release.yml/badge.svg)](https://github.com/stalepretzels/bartender/actions/workflows/release.yml)
-[![Hex.pm Version](https://img.shields.io/hexpm/v/bartender_filter?label=hex.pm)](https://hex.pm/packages/bartender_filter)
+[![npmpkg](https://img.shields.io/npm/v/%40stalepretzels%2Fbartender)](https://www.npmjs.com/package/@stalepretzels/bartender)
 
-
-Elixir bindings for the `rustrict` crate.
+Node.js bindings for the `rustrict` crate.
 
 **NOTE: `rustrict` was made by [@finnbear](https://github.com/finnbear), and not me! I am simply making bindings to it! Please check out [his original project](https://github.com/finnbear/rustrict).**
 
@@ -59,37 +58,37 @@ This is handicapped by everything the original was:
 </details>
 
 ## How do I use this?
-Simple! Just alias (or import) Bartender at the beginning of the your `.ex` file to begin!
-```elixir
-alias Bartender
-# or `import Bartender`
-# Simply remove `Bartender.` from the beginning of the code if you plan on using import. 
+Simple! Just alias (or import) Bartender at the beginning of the your `.js` file to begin!
+```javascript
+let bartender = require('@stalepretzels/bartender');   // commonjs require
+import * as bartender from '@stalepretzels/bartender'; // esm import
+// Simply remove `bartender.` from the beginning of the code if you plan on importing functions by themselves. 
 ```
 
 Censor and check for profanity:
-```elixir
-# censor(input: String) -> String
-# is_inappropriate(input: String) -> bool
+```javascript
+// censor(input: String) -> String
+// is_inappropriate(input: String) -> bool
 
-censored = Bartender.censor("hello crap") # -> "hello c***"
+bartender.censor("hello crap") // -> "hello c***"
 
-inappropriate = Bartender.is_inappropriate("f u c k") # -> true
+bartender.is_inappropriate("f u c k") // -> true
 ```
 
 Type match strings:
-```elixir
-# is(input: String, filter_input: String) -> bool
-# isnt(input: String, filter_input: String) -> bool
+```javascript
+// is(input: String, filter_input: String) -> bool
+// isnt(input: String, filter_input: String) -> bool
 
-Bartender.is("pron", "evasive") # -> true
-Bartender.isnt("porn", "evasive") # -> true
+bartender.is("pron", "evasive"); // -> true
+bartender.isnt("porn", "evasive"); // -> true
 
-Bartender.is("Hello there!", "safe") # -> true
-Bartender.is("nice work.", "safe") # -> true
-Bartender.is("yes", "safe") # -> true
-Bartender.is("NVM", "safe") # -> true
-Bartender.is("gtg", "safe") # -> true
-Bartender.isnt("not a common phrase", "safe") # -> true
+bartender.is("Hello there!", "safe"); // -> true
+bartender.is("nice work.", "safe"); // -> true
+bartender.is("yes", "safe"); // -> true
+bartender.is("NVM", "safe"); // -> true
+bartender.is("gtg", "safe"); // -> true
+bartender.isnt("not a common phrase", "safe"); // -> true
 ```
 
 ## Roadmap

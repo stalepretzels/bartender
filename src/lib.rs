@@ -1,6 +1,7 @@
 use rustrict::{CensorStr, Type};
 use std::collections::HashMap;
 use once_cell::sync::Lazy;
+use neon::prelude::*;
 
 static TYPE_MAP: Lazy<HashMap<String, Type>> = Lazy::new(|| HashMap::from(
 [
@@ -41,36 +42,45 @@ fn bitwise_equation(input: &str) -> Option<Type> {
     Some(result)
 }
 
-#[rustler::nif]
-fn censor(input: String) -> String {
-    input.censor()
+fn censor(mut cx: FunctionContext) -> JsResult<JsString> {
+    let input = cx.argument::<JsString>(0)?.value(&mut cx);
+    Ok(cx.string(input.censor()))
 }
 
-#[rustler::nif]
-fn is_inappropriate(input: String) -> bool {
-    input.is_inappropriate()
+fn is_inappropriate(mut cx: FunctionContext) -> JsResult<JsBoolean> {
+    let input = cx.argument::<JsString>(0)?.value(&mut cx);
+    Ok(cx.bool(input.is_inappropriate()))
 }
 
-#[rustler::nif]
-fn is(input: String, filter_input: String) -> bool {
+fn is(mut cx: FunctionContext) -> JsResult<JsBoolean> {
+    let input = cx.argument::<JsString>(0)?.value(&mut cx);
+    let filter_input = cx.argument::<JsBoolean>(1)?.value(&mut cx);
     let filter;
     if let Some(result) = bitwise_equation(&filter_input) {
         filter = result;
     } else {
         panic!("Invalid input or keys not found in the map");
     }
-    input.is(filter)
+    Ok(cx.bool(input.is(filter)))
 }
 
-#[rustler::nif]
-fn isnt(input: String, filter_input: String) -> bool {
+fn isnt(mut cx: FunctionContext) -> JsResult<JsBoolean> {
+    let input = cx.argument::<JsString>(0)?.value(&mut cx);
+    let filter_input = cx.argument::<JsBoolean>(1)?.value(&mut cx);
     let filter;
     if let Some(result) = bitwise_equation(&filter_input) {
         filter = result;
     } else {
         panic!("Invalid input or keys not found in the map");
     }
-    input.isnt(filter)
+    Ok(cx.bool(input.isnt(filter)))
 }
 
-rustler::init!("Elixir.Bartender", [censor, is_inappropriate, is, isnt]);
+#[neon::main]
+fn main(mut cx: ModuleContext) -> NeonResult<()> {
+    cx.export_function("censor", censor)?;
+    cx.export_function("is_inappropriate", is_inappropriate)?;
+    cx.export_function("is", is)?;
+    cx.export_function("isnt", isnt)?;
+    Ok(())
+}

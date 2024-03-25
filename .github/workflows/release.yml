@@ -11,13 +11,12 @@ jobs:
               uses: actions/checkout@v4
             - name: Install Rust toolchain
               uses: dtolnay/rust-toolchain@stable
-            - uses: erlef/setup-beam@v1
+            - name: Install Node.js toolchain
+              uses: actions/setup-node@stable
               with:
-                otp-version: '22.2'
-                elixir-version: '1.12'
-            - run: mix deps.get
-            - run: mix test
-            - name: Publish to Hex.pm
-              run: mix hex.publish --yes
-              env:
-                HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
+                node-version: 20
+            - name: Publish to NPM
+              uses: JS-DevTools/npm-publish@v3
+              with:
+                token: ${{ secrets.NPM_TOKEN }}
+                access: "public"
