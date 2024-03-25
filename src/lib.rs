@@ -49,7 +49,7 @@ fn censor(mut cx: FunctionContext) -> JsResult<JsString> {
 
 fn is_inappropriate(mut cx: FunctionContext) -> JsResult<JsBoolean> {
     let input = cx.argument::<JsString>(0)?.value(&mut cx);
-    Ok(cx.bool(input.is_inappropriate()))
+    Ok(cx.boolean(input.is_inappropriate()))
 }
 
 fn is(mut cx: FunctionContext) -> JsResult<JsBoolean> {
@@ -61,7 +61,7 @@ fn is(mut cx: FunctionContext) -> JsResult<JsBoolean> {
     } else {
         panic!("Invalid input or keys not found in the map");
     }
-    Ok(cx.bool(input.is(filter)))
+    Ok(cx.boolean(input.is(filter)))
 }
 
 fn isnt(mut cx: FunctionContext) -> JsResult<JsBoolean> {
@@ -73,7 +73,7 @@ fn isnt(mut cx: FunctionContext) -> JsResult<JsBoolean> {
     } else {
         panic!("Invalid input or keys not found in the map");
     }
-    Ok(cx.bool(input.isnt(filter)))
+    Ok(cx.boolean(input.isnt(filter)))
 }
 
 #[neon::main]
